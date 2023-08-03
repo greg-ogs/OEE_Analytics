@@ -2,6 +2,8 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 
+from SQL_server import SQLServer
+
 
 class ReadData:  # Create a class
     def __init__(self, para):  # Create a start method
@@ -25,7 +27,6 @@ class Plots:
         print(self.data.columns)  # Print colum name
         print(self.data.head())
 
-
     def histogram(self):
         plt.figure(figsize=(10, 5), facecolor="white", edgecolor="black")  # Figure configuration
         # plt.title('Histogram') displot cant use plt title
@@ -36,7 +37,6 @@ class Plots:
         # Use hue to add another colum to histogram
         # Use palette for color palette
         plt.show()
-
 
     def unique_data(self):
         plt.figure(figsize=(15, 7.5), facecolor="#E1E4E3", edgecolor="white")  # Figure configuration
@@ -77,8 +77,12 @@ class Plots:
         plt.show()
 
 
-plotting = Plots()  # Instance plot object
-plotting.histogram()
-plotting.unique_data()
+# plotting = Plots()  # Instance plot object
+# plotting.histogram()
+# plotting.unique_data()
 # plotting.unique_dispersion()
-plotting.violin_plot()
+# plotting.violin_plot()
+
+server = SQLServer()
+server.insert_data()
+server.read_from_lite()
