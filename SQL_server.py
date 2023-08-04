@@ -5,7 +5,7 @@ import sqlite3
 
 class SQLServer():
     def __init__(self):
-        self.conn = sqlite3.connect('nombre_basedatos.db')
+        self.conn = sqlite3.connect('ramabruckner.db3')
         self.mydb = mysql.connector.connect(
             host="192.168.0.39",
             user="Greg",
@@ -27,6 +27,6 @@ class SQLServer():
 
     def read_from_lite(self):
         cursor = self.conn.cursor()
-        cursor.execute("SELECT * FROM compilado_oee")
+        cursor.execute("SELECT * FROM produccion")
         rows = cursor.fetchall()
         print(rows)
