@@ -29,4 +29,6 @@ class SQLServer():
         cursor = self.conn.cursor()
         cursor.execute("SELECT * FROM produccion")
         rows = cursor.fetchall()
+        rows = rows
         print(rows)
+        return rows
